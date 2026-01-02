@@ -9,15 +9,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
-      - name: Verify calculator project exists
-        run: |
-          ls
-          ls calculator
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
 
-      - name: Run basic CI check
+      - name: Install dependencies
         run: |
           cd calculator
-          echo "CI check passed for calculator project"
+          npm install
+
+      - name: Run tests
+        run: |
+          cd calculator
+          npm test
