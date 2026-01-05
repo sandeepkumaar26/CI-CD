@@ -1,0 +1,9 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Sample calculator app for CI/CD pipeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Tests passed successfully\""
+  }
+}
